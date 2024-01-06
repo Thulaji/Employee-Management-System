@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;1,400;1,600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    background: url(https://designpickle-resources.s3.us-east-2.amazonaws.com/2020/Zoom+Backgrounds/April/20_DesignPickle_Zoom_Background-3.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+.container {
+    width: 500px;
+    height: 600px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #535252;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    
+} 
+
+
+h3 {
+    font-size: 2em;
+    color: #fff;
+    text-align: center;
+}
+
+/* .form-group {
+    position: relative;
+    margin: 30px 0px;
+    width: 310px;
+    /* border-bottom: 2px solid #fff; */
+/* } */ 
+/* 
+.form-group label {
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-45%);
+    font-size: 1em;
+    color: #fff;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+
+input:focus~label,
+input:valid~label {
+    top: -5px;
+} */
+
+/* .form-group label {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    outline: none;
+    border: none;
+    padding: 0 35px 0 5px;
+    font-size: 1em;
+    color: #fff;
+}
+
+
+button {
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    background: #fff;
+    outline: none;
+    border: none;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.7;
+} */
+
+h3 {
+    font-size: 2em;
+    color: #fff;
+    text-align: center;
+}
+
+table tr,th,td {
+    border: 2px solid white;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin:30px ;
+    margin-left: auto;
+    margin-right: auto;
+    
+  }
+
+.form-group label{
+    color: #fff;
+    font-weight: bold;
+}
+
+.form-group option {
+    margin: 20px;
+}
+
+.form-control{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  /* border-radius: 20px; */
+}
+
+.btn{
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    height: 40px;
+    /* border-radius: 20px; */
+    color: black;
+    font-weight: bold;
+    /* background: #fff; */
+    /* outline: none; */
+    /* border: none; */
+    /* font-size: 1em; */
+    /* font-weight: 600; */
+    /* cursor: pointer; */
+}

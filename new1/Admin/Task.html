@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Task register</title>
+    <script>
+      var date = new Date();
+      var tdate = date.getDate();
+      if (tdate < 10) {
+        tdate = "0" + tdate;
+      }
+      var month = date.getMonth() + 1;
+      if (month < 10) {
+        month = "0" + month;
+      }
+      var year = date.getUTCFullYear();
+      var minDate = year + "-" + month + "-" + tdate;
+      document.getElementById("StartDate").setAttribute("min", minDate);
+      console.log(minDate);
+    </script>
+
+    <style>
+      .form-box form .input small {
+        font-size: 15px;
+        color: red;
+        visibility: hidden;
+      }
+      .form-box form .input .i i {
+        position: absolute;
+        right: 10px;
+        top: 35px;
+        visibility: hidden;
+      }
+      .field {
+        position: relative;
+      }
+      .form-box form .success input {
+        border: 3px green solid;
+      }
+
+      .form-box form .error input {
+        border: 3px red solid;
+      }
+
+      .form-box form .error small {
+        visibility: visible;
+      }
+
+      .form-box form .success .i .fa-circle-check {
+        visibility: visible;
+        color: #5bcd8c;
+      }
+
+      .form-box form .error .i .fa-circle-exclamation {
+        visibility: visible;
+        color: #ca4e4e;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box form-box">
+        <header>Task</header>
+        <form
+          action="regTask.php"
+          method="post"
+          id="form"
+          onsubmit="return validateForm(event)"
+          autocomplete="off"
+          novalidate
+        >
+          <div class="field input">
+            <label for="TId">Task ID</label>
+            <input type="text" name="TId" id="TId" required />
+            <div class="i">
+              <i class="fa-solid fa-circle-check"></i>
+              <i class="fa-sharp fa-solid fa-circle-exclamation"></i>
+            </div>
+            <small>Error Message</small>
+          </div>
+          <div class="field input">
+            <label for="taskName">Task Name</label>
+            <input type="text" name="taskName" id="taskName" required />
+            <div class="i">
+              <i class="fa-solid fa-circle-check"></i>
+              <i class="fa-sharp fa-solid fa-circle-exclamation"></i>
+            </div>
+            <small>Error Message</small>
+          </div>
+          <div class="field input">
+            <label for="StartDate">Start Date</label>
+            <input type="date" name="StartDate" id="StartDate" required />
+            <!-- <div class="i">
+              <i class="fa-solid fa-circle-check"></i>
+              <i class="fa-sharp fa-solid fa-circle-exclamation"></i>
+            </div> -->
+            <small>Error Message</small>
+          </div>
+          <div class="field input">
+            <label for="endDate">End Date</label>
+            <input type="date" name="endDate" id="endDate" required />
+            <!-- <div class="i">
+              <i class="fa-solid fa-circle-check"></i>
+              <i class="fa-sharp fa-solid fa-circle-exclamation"></i>
+            </div> -->
+            <small>Error Message</small>
+          </div>
+          <div class="field input">
+            <label for="nature">Nature</label>
+            <input type="text" name="nature" id="nature" required />
+            <div class="i">
+              <i class="fa-solid fa-circle-check"></i>
+              <i class="fa-sharp fa-solid fa-circle-exclamation"></i>
+            </div>
+            <small>Error Message</small>
+          </div>
+          <div class="field">
+            <button type="submit" class="btn" name="submit">Register</button>
+          </div>
+          <div class="field">
+            <button type="button" class="btn cancel-btn">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="taskJscript.js"></script>
+    <script>
+      // Add JavaScript to handle the cancel button click event
+      document
+        .querySelector(".cancel-btn")
+        .addEventListener("click", function () {
+          window.location.href = "taskDetails.php";
+        });
+
+      var date = new Date();
+      var tdate = date.getDate();
+      if (tdate < 10) {
+        tdate = "0" + tdate;
+      }
+      var month = date.getMonth() + 1;
+      if (month < 10) {
+        month = "0" + month;
+      }
+      var year = date.getFullYear();
+      var minDate = year + "-" + month + "-" + tdate;
+      document.getElementById("StartDate").setAttribute("min", minDate);
+      document.getElementById("endDate").setAttribute("min", minDate);
+    </script>
+  </body>
+</html>

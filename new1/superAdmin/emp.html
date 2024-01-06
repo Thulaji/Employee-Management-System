@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.google.com/" />
+    <link rel="stylesheet" href="styl.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      /* Add your CSS styles for validation here */
+
+      .form-box form .input small {
+        font-size: 15px;
+        color: red;
+        visibility: hidden;
+      }
+      .form-box form .input .i i {
+        position: absolute;
+        right: 10px;
+        top: 35px;
+        visibility: hidden;
+      }
+      .field {
+        position: relative;
+      }
+
+      .form-box form .success input {
+        border: 3px green solid;
+      }
+
+      .form-box form .error input {
+        border: 3px red solid;
+      }
+
+      .form-box form .error small {
+        visibility: visible;
+      }
+
+      .form-box form .success .i .fa-circle-check {
+        visibility: visible;
+        color: #5bcd8c;
+      }
+
+      .form-box form .error .i .fa-circle-exclamation {
+        visibility: visible;
+        color: #ca4e4e;
+      }
+    </style>
+
+    <title>Employee reg</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="box form-box">
+        <header>Add Employee</header>
+        <form
+          action="empReg.php"
+          method="post"
+          id="form"
+          onsubmit="return validateForm(event)"
+          autocomplete="off"
+          novalidate
+        >
+          <div class="field input" id="empId">
+            <!-- Updated line -->
+            <label for="EId">Employee ID</label>
+            <input type="text" name="EId" id="EId" required />
+            <!-- <div class="error"></div> -->
+            <div class="i">
+              <i class="fa-solid fa-circle-check"></i>
+              <i class="fa-sharp fa-solid fa-circle-exclamation"></i>
+            </div>
+            <small>Error Message</small>
+          </div>
+          <div class="field input" id="tel">
+            <!-- Updated line -->
+            <label for="telephone">Telephone</label>
+            <input type="tel" name="telephone" id="telephone" required />
+            <div class="i">
+              <i class="fa-solid fa-circle-check" style="color: #5bcd8c"></i>
+              <i
+                class="fa-sharp fa-solid fa-circle-exclamation"
+                style="color: #ca4e4e"
+              ></i>
+            </div>
+            <small>Error Message</small>
+            <!-- <div class="error"></div> -->
+          </div>
+          <div class="field input" id="nme">
+            <!-- Updated line -->
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" required />
+            <div class="i">
+              <i class="fa-solid fa-circle-check" style="color: #5bcd8c"></i>
+              <i
+                class="fa-sharp fa-solid fa-circle-exclamation"
+                style="color: #ca4e4e"
+              ></i>
+            </div>
+            <small>Error Message</small>
+            <!-- <div class="error"></div> -->
+          </div>
+          <div class="field input" id="emal">
+            <!-- Updated line -->
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" required />
+            <div class="i">
+              <i class="fa-solid fa-circle-check" style="color: #5bcd8c"></i>
+              <i
+                class="fa-sharp fa-solid fa-circle-exclamation"
+                style="color: #ca4e4e"
+              ></i>
+            </div>
+            <small>Error Message</small>
+            <!-- <div class="error"></div> -->
+          </div>
+          <div class="field input" id="design">
+            <!-- Updated line -->
+            <label for="designation">Designation</label>
+            <input type="text" name="designation" id="designation" required />
+            <div class="i">
+              <i class="fa-solid fa-circle-check" style="color: #5bcd8c"></i>
+              <i
+                class="fa-sharp fa-solid fa-circle-exclamation"
+                style="color: #ca4e4e"
+              ></i>
+            </div>
+            <small>Error Message</small>
+            <!-- <div class="error"></div> -->
+          </div>
+          <div class="field">
+            <button type="submit" class="btn" id="btnn">register</button>
+          </div>
+          <div class="field">
+            <button type="button" class="btn cancel-btn">Cancel</button>
+          </div>
+        </form>
+        <p>Already have an account? <a href="setUserAccount.php">Go</a></p>
+      </div>
+    </div>
+
+    <script>
+      document
+        .querySelector(".cancel-btn")
+        .addEventListener("click", function () {
+          window.location.href = "employeedetails.php";
+        });
+    </script>
+    <script>
+      document.getElementById("btnn").addEventListener("click", function () {
+        window.location.href = "setUserAccount.php";
+      });
+    </script>
+    
+    <script src="jScript.js"></script>
+  </body>
+</html>

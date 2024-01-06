@@ -1,0 +1,520 @@
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap");
+ 
+:root {
+   --primary: #eeeeee;
+   --secondary: #227c70;
+   --green: #82cd47;
+   --secondary-light: rgb(34, 124, 112, 0.2);
+   --secondary-light-2: rgb(127, 183, 126, 0.1);
+   --white: #fff;
+   --black: #393e46;
+ 
+   --shadow: 0px 2px 8px 0px var(--secondary-light);
+ }
+
+ *{
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    font-family: "poppins" ,sans-serif;
+ }
+
+ body{
+    display: flex;
+ }
+ .slidebar{
+    position: sticky;
+    top: 0;
+    left: o;
+    bottom: 0;
+    width: 110px;
+    height: 100vh;
+    padding: 0 1.7rem;
+    color: #fff;
+    overflow: hidden;
+    transition: all 0.5s linear;
+    background: rgb(25, 2, 84);
+ }
+
+ .slidebar:hover{
+    width: 240px;
+    transition: 0.5s;
+ }
+
+ .logo{
+        height: 80px;
+        padding: 16px;
+ }
+
+ .menu{
+    height: 88%;
+    position: relative;
+    list-style: none;
+    padding: o;
+ }
+
+ .menu li{
+    padding: 1rem;
+    margin: 8px 0;
+    border-radius: 8px;
+    transition: all o.5s ease-in-out;
+ }
+
+ .menu li:hover,
+ .active{
+    background: #e0e0e058;
+ }
+
+ .menu a{
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+ }
+
+ .menu a span{
+    overflow: hidden;
+ } 
+
+ .menu a i{
+    font-size: 1.2ren0;
+ }
+
+ .logout{
+    position: absolute;
+    bottom: 0;
+    left: o;
+    width: 100%;
+ }
+
+ /* main body selection*/
+ .main-content{
+    position: relative;
+    background:#ebe9e9;
+    width: 100%;
+    padding: 1rem;
+
+ }
+
+ .header-wrapper img{
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 50%;
+
+ }
+
+ .header-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background: #fff;
+    border-radius: 10px;
+    padding: 10px 2rem;
+    margin-bottom: 1rem;
+    height: 70px;
+ }
+
+ .header-title{
+    color: rgba(113, 99, 186, 255);
+ }
+
+ .user-info{
+    display:flex ;
+    align-items: center;
+    gap: 1rem;
+
+ }
+
+ .search-box{
+    background: rgb(237,237,237);
+    border-right: 15px;
+    color: rgba(113, 99, 186, 255);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 12px;
+ }
+
+ .search-box input{
+    background: transparent;
+    padding: 10px;
+ }
+
+ .search-box i{
+   font-size: 1.2rem;
+   cursor: pointer;
+    transition: all 0.5s ease-out;
+ }
+
+ .search-box i:hover{
+   transform: scale(1.2);
+   
+ }
+
+ /*******************************/
+ .navbar-logo {
+   cursor: pointer;
+ }
+
+.profile-dropdown{
+   position: relative;
+   width: fit-content;
+}
+
+.profile-dropdown-btn{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding-right: 1rem;
+   font-size: 0.9rem;
+   font-weight: 500;
+   border: 1px solid var(--secondary);
+   border-radius: 50px;
+   cursor: pointer;
+   width: 150px;
+   transition: box-shadow 0.2s, background-color 0.2s;
+}
+
+.profile-dropdown-btn:hover{
+   background-color: var(--secondary-Light-2);
+   box-shadow:var(--shadow);
+}
+.profile-img {
+   position: relative;
+   width: 3rem;
+   height: 3rem;
+   border-radius: 50%;
+   background: url(profile-pic.jpg);
+   background-size: cover;
+ }
+
+.profile-img i{
+   position: absolute;
+   right: 0;
+   bottom: 0.3rem;
+   font-size: 0.5rem;
+   color: var(--green);
+}
+
+.profile-dropdown-btn span{
+   margin: 0 0.5rem;
+   margin-right: 0;
+}
+
+.profile-dropdown-list{
+   position: absolute;
+   z-index: 10;
+   top: 60px;
+   width: 220px;
+   right: 0;
+   background-color: var(--white);
+   border-radius: 10px;
+   box-shadow: var(--shadow);
+   max-height: 0;
+   overflow: hidden;
+   transition: max-height 0.3s;
+}
+
+.profile-dropdown-list.active{
+   max-height: 500px;
+}
+
+.profile-dropdown-list hr{
+   border: 0.5px solid var(--green);
+}
+
+.profile-dropdown-list-item{
+   padding: 0.5rem 0 0.5rem 1rem;
+   transition: background-color 0.2s,padding left 0.2s;
+}
+
+.profile-dropdown-list-item:hover{
+   padding-left: 1.5rem;
+   background-color: var(--secondary-light);
+}
+
+.profile-dropdown-list-item a{
+   display: flex;
+   align-items: center;
+   text-decoration: none;
+   font-size: 0.9rem;
+   font-weight: 500;
+   color: var(--black);
+}
+
+.profile-dropdown-list-item a i{
+   margin-right: 1rem;
+   font-size: 1.1rem;
+   height: 1rem;
+   background-color: var(--secondary);
+   color: var(--white);
+   line-height: 2.3rem;
+   text-align: center;
+   border-radius: 50%;
+}
+ /*card container*/
+
+ .card-container{
+   background: #fff;
+   padding: 2rem;
+   border-radius: 10px;
+ }
+
+ .card-wrapper{
+   display: flex;
+   flex-wrap: wrap;
+   gap: 1rem;
+ }
+ .main-title{
+   color: rgba(113, 99, 186, 255);
+   padding-bottom: 10px;
+   font-size: 15px;
+ }
+ .activetask-card{
+   background: rgb(229,223,223);
+   border-radius: 10px;
+   padding: 1.2rem;
+   width: 290px;
+   height: 150px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   transition: all 0.5s ease ease-in-out;
+ }
+
+ .activetask-card:hover{
+   transform: translateY(-5px);
+ }
+
+ .card-header{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-bottom: 20px;
+ }
+
+ .task{
+   display: flex;
+   flex-direction: column;
+ }
+
+ .title{
+   font-size: 17px;
+   font-weight: 200;
+
+ }
+ .amount-value{
+   font-size: 24px;
+   font-family: 'Courier New', Courier, monospace;
+   font-weight: 600;
+ }
+
+ .icon{
+   color: #fff;
+   padding: 1rem;
+   height: 60px;
+   width: 60px;
+   text-align: center;
+   border-radius: 50px;
+   background: rgb(25, 16, 127);
+}
+
+.card-detail{
+   font-size: 18px;
+   color: #777777;
+   letter-spacing: 2px;
+   font-family: 'Courier New', Courier, monospace;
+
+}
+
+/* color css*/
+.light-red{
+   background: rgb(251,233,233);  
+}
+
+.light-purple{
+   background: rgb(254,226,254);
+}
+
+.light-green{
+   background: rgb(235,254,235);
+}
+
+.light-blue{
+   background: rgb(236,236,254);
+}
+
+.dark-red{
+   background: red;  
+}
+
+.dark-purple{
+   background:purple;  
+}
+
+.dark-green{
+   background: green;  
+}
+
+.dark-blue{
+   background:blue;  
+}
+
+/* tabular section*/
+.tobular-wrapper{
+   background: #fff;
+   margin-top: 1rem;
+   border-radius: 10px;
+   padding: 2rem;
+}
+
+.table-containe{
+   width: 100%;
+}
+
+table{
+   width: 100%;
+   border-collapse: collapse;
+}
+
+thead{
+   background: rgb(25, 16, 127);
+   color: #fff;
+}
+
+th{
+   padding: 15px;
+   text-align: left;
+}
+
+tbody{
+   background: #f2f2f2f2;
+}
+
+td{
+   padding: 15px;
+   font-size: 14px;
+   color: #333;
+}
+
+tr:nth-child(even){
+   background: #fff;
+}
+
+tfoot{
+   background: rgba(113, 99, 186, 255);
+   font-weight: bold;
+   color: #fff;
+}
+tfoot td{
+   padding: 15px;
+}
+
+.table-container button{
+   color: green;
+   background: none;
+   cursor: pointer;
+}
+.top-right {
+   position: absolute; /*or use 'fixed' if you want the button to stay on top right even when you scroll*/
+   top: 100px;
+   right: 10px;
+}
+
+.my-button {
+   padding: 10px 20px;
+   background-color: #007BFF;
+   color: white;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   transition: background-color 0.3s ease;
+}
+
+.my-button:hover {
+   background-color: #0056b3;
+} 
+
+/* .card-footer {
+   background-color: rgba(0, 0, 0, 0.1); Slightly darker shade for footer
+   padding: 10px 15px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.small {
+   font-size: 0.8em;
+}
+
+.text-white {
+   color: #ffffff;
+}
+
+.stretched-link::after {
+   position: absolute;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   z-index: 1;
+   pointer-events: auto;
+   content: "";
+   background-color: rgba(0, 0, 0, 0);
+} */
+
+/* .card-footer a:hover {
+   text-decoration: none;
+   color: rgba(255, 255, 255, 0.8); Slightly faded white on hover
+}
+
+.fas, .fa {
+   font-family: "Font Awesome 5 Free";
+   font-weight: 900;
+   font-size: 1.5em;
+} */
+
+/* .card-footer a + .small {
+   margin-left: 5px; Spacing between the link and the arrow icon
+} */
+/* .Ebtn, .Dbtn {
+   font-family: Arial, sans-serif;  
+   padding: 8px 16px;  
+   border-radius: 4px;  
+   cursor: pointer;  
+   transition: background-color 0.3s ease; 
+   margin: 0 5px;  
+} */
+
+
+/* .Ebtn {
+   background-color: #000000;  
+   color: #ffffff;  
+}
+
+.Ebtn:hover {
+   background-color: #45a049;  
+}
+
+
+.Dbtn {
+   background-color: #000000;  
+   color: #ffffff;  
+}
+
+.Dbtn:hover {
+   background-color: #da190b;  
+} */
+
+
+ 
+
+
+

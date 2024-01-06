@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Task register</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box form-box">
+        <header>Task</header>
+        <form action="regTask.php" method="post">
+          <div class="field input">
+            <label for="TId">Task ID</label>
+            <input type="text" name="TId" id="TId" required />
+          </div>
+          <div class="field input">
+            <label for="taskName">Task Name</label>
+            <input type="text" name="taskName" id="taskName" required />
+          </div>
+          <div class="field input">
+            <label for="StartDate">Start Date</label>
+            <input type="date" name="StartDate" id="StartDate" required />
+          </div>
+          <div class="field input">
+            <label for="endDate">End Date</label>
+            <input type="date" name="endDate" id="endDate" required />
+          </div>
+          <div class="field input">
+            <label for="nature">Nature</label>
+            <input type="text" name="nature" id="nature" required />
+          </div>
+          <div class="field">
+            <input type="submit" class="btn" name="submit" value="register" />
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
